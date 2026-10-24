@@ -1,0 +1,27 @@
+[versions]
+agp = "9.4.1"
+appcompat = "1.8.0"
+core = "1.19.1"
+glide = "5.0.9"
+json = "20260814"
+junit = "4.13.2"
+libxposed = "102.0.0"
+material = "1.14.0"
+recyclerview = "1.4.0"
+swiperefreshlayout = "1.2.0"
+xposed = "82"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-core = { module = "androidx.core:core", version.ref = "core" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+json = { module = "org.json:json", version.ref = "json" }
+junit = { module = "junit:junit", version.ref = "junit" }
+libxposed-api = { module = "io.github.libxposed:api", version.ref = "libxposed" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Accent colors generated from seed colors with the Material color utilities (fidelity scheme), see ApplicationEx.PALETTES; the default Ocean is in colors.xml;
+     backgrounds, text and outlines are those of the light or dark theme, like Magisk does -->
+<resources>
+    <!-- Pure black background: only in the dark theme (values-night), see ApplicationEx.applyPalette -->
+    <style name="ThemeOverlay.XLua.Black" parent="" />
+
+    <style name="ThemeOverlay.XLua.Berry" parent="">
+        <item name="colorPrimary">#943D54</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#B2556C</item>
+        <item name="colorOnPrimaryContainer">#FFF8F8</item>
+        <item name="colorSecondary">#7E525B</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#FDC3CD</item>
+        <item name="colorOnSecondaryContainer">#794D56</item>
+        <item name="colorTertiary">#156830</item>
+        <item name="colorOnTertiary">#FFFFFF</item>
+        <item name="colorTertiaryContainer">#348246</item>
+        <item name="colorOnTertiaryContainer">#EEFFEA</item>
+    </style>
+
+    <style name="ThemeOverlay.XLua.Sky" parent="">
+        <item name="colorPrimary">#186778</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#6FB3C6</item>
+        <item name="colorOnPrimaryContainer">#004452</item>
+        <item name="colorSecondary">#4A626A</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#CDE7F0</item>
+        <item name="colorOnSecondaryContainer">#506870</item>
+        <item name="colorTertiary">#855322</item>
+        <item name="colorOnTertiary">#FFFFFF</item>
+        <item name="colorTertiaryContainer">#DA9C64</item>
+        <item name="colorOnTertiaryContainer">#5E3303</item>
+    </style>
+
+    <style name="ThemeOverlay.XLua.Teal" parent="">
+        <item name="colorPrimary">#00685E</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#008377</item>
+        <item name="colorOnPrimaryContainer">#F4FFFB</item>
+        <item name="colorSecondary">#3E655F</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#C0EBE3</item>
+        <item name="colorOnSecondaryContainer">#446C65</item>
+        <item name="colorTertiary">#944429</item>
+        <item name="colorOnTertiary">#FFFFFF</item>
+        <item name="colorTertiaryContainer">#B35C3E</item>
+        <item name="colorOnTertiaryContainer">#FFFBFF</item>
+    </style>
+
+</resources>

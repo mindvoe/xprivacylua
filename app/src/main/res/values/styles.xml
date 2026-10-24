@@ -1,0 +1,343 @@
+<resources>
+    <!-- Colors without a Material 3 role -->
+    <attr name="colorWarning" format="color" />
+    <attr name="colorWarningContainer" format="color" />
+    <attr name="colorOnWarningContainer" format="color" />
+    <attr name="colorSuccess" format="color" />
+    <attr name="colorSuccessContainer" format="color" />
+    <attr name="colorOnSuccessContainer" format="color" />
+
+    <!-- Light and dark follow the theme setting, see ApplicationEx -->
+    <style name="Theme.XLua" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Edge-to-edge is enabled by ActivityBase -->
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="colorPrimary">@color/c_primary</item>
+        <item name="colorOnPrimary">@color/c_on_primary</item>
+        <item name="colorPrimaryContainer">@color/c_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/c_on_primary_container</item>
+        <item name="colorSecondary">@color/c_secondary</item>
+        <item name="colorOnSecondary">@color/c_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/c_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/c_on_secondary_container</item>
+        <item name="colorTertiary">@color/c_tertiary</item>
+        <item name="colorOnTertiary">@color/c_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/c_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/c_on_tertiary_container</item>
+
+        <item name="android:colorBackground">@color/c_surface</item>
+        <item name="colorSurface">@color/c_surface</item>
+        <item name="colorOnSurface">@color/c_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/c_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">@color/c_surface_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/c_surface_low</item>
+        <item name="colorSurfaceContainer">@color/c_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/c_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/c_surface_highest</item>
+        <item name="colorOutline">@color/c_outline</item>
+        <item name="colorOutlineVariant">@color/c_outline_variant</item>
+
+        <item name="colorError">@color/c_error</item>
+        <item name="colorOnError">@color/c_on_error</item>
+        <item name="colorErrorContainer">@color/c_error_container</item>
+        <item name="colorOnErrorContainer">@color/c_on_error_container</item>
+
+        <item name="colorWarning">@color/c_warning</item>
+        <item name="colorWarningContainer">@color/c_warning_container</item>
+        <item name="colorOnWarningContainer">@color/c_on_warning_container</item>
+
+        <item name="colorSuccess">@color/c_success</item>
+        <item name="colorSuccessContainer">@color/c_success_container</item>
+        <item name="colorOnSuccessContainer">@color/c_on_success_container</item>
+
+        <!-- IBM Plex Sans for all text, see res/font -->
+        <item name="android:fontFamily">@font/plex_sans</item>
+        <item name="fontFamily">@font/plex_sans</item>
+        <item name="textAppearanceHeadlineLarge">@style/XLua.TextAppearance.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/XLua.TextAppearance.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/XLua.TextAppearance.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/XLua.TextAppearance.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/XLua.TextAppearance.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/XLua.TextAppearance.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/XLua.TextAppearance.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/XLua.TextAppearance.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/XLua.TextAppearance.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/XLua.TextAppearance.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/XLua.TextAppearance.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/XLua.TextAppearance.LabelSmall</item>
+
+        <item name="materialCardViewStyle">@style/XLua.Card</item>
+        <item name="bottomNavigationStyle">@style/XLua.BottomNavigation</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Surface</item>
+    </style>
+
+    <!-- Cards: tonal surfaces without hairlines or elevation -->
+    <style name="XLua.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainerLowest</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <!-- Typography: IBM Plex Sans, medium for titles and labels -->
+    <style name="XLua.TextAppearance.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+    <style name="XLua.TextAppearance.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+    <style name="XLua.TextAppearance.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/plex_sans</item>
+        <item name="fontFamily">@font/plex_sans</item>
+    </style>
+    <style name="XLua.TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/plex_sans</item>
+        <item name="fontFamily">@font/plex_sans</item>
+    </style>
+    <style name="XLua.TextAppearance.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/plex_sans</item>
+        <item name="fontFamily">@font/plex_sans</item>
+    </style>
+    <style name="XLua.TextAppearance.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+    <style name="XLua.TextAppearance.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+    </style>
+
+    <style name="XLua.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">?attr/colorSurfaceContainerLowest</item>
+    </style>
+
+    <!-- Screen title of the top level screens -->
+    <style name="XLua.Text.ScreenTitle" parent="XLua.TextAppearance.HeadlineMedium">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Uppercase caption above a group of rows -->
+    <style name="XLua.Text.Section" parent="XLua.TextAppearance.LabelMedium">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <!-- Package names, class names, values -->
+    <style name="XLua.Text.Mono" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/plex_mono</item>
+        <item name="fontFamily">@font/plex_mono</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="XLua.Text.Meta" parent="XLua.TextAppearance.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- Small rounded label, the background is set from code -->
+    <style name="XLua.Badge" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">7dp</item>
+        <item name="android:paddingEnd">7dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/plex_mono</item>
+    </style>
+
+    <!-- Count at the end of a row, like 29/29; the colors are set from code -->
+    <style name="XLua.Pill" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+        <item name="android:background">@drawable/bg_pill</item>
+    </style>
+
+    <!-- Word next to the title of a tab, like Active, with an icon in front; the colors are set from code -->
+    <style name="XLua.StatusChip" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/plex_sans_title</item>
+        <item name="fontFamily">@font/plex_sans_title</item>
+        <item name="android:background">@drawable/bg_pill</item>
+    </style>
+
+    <!-- Caption above a card -->
+    <style name="XLua.SectionTitle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:textAppearance">@style/XLua.Text.Section</item>
+    </style>
+
+    <!-- Row of a settings card -->
+    <style name="XLua.Row" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="XLua.Row.Text" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="XLua.Row.Title" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+    </style>
+
+    <style name="XLua.Row.Subtitle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/XLua.Text.Meta</item>
+    </style>
+
+    <!-- Icon at the end of a row which opens something, an arrow unless another icon is set;
+         the rows set importantForAccessibility, which lint only sees in the layout -->
+    <style name="XLua.Row.Icon" parent="">
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:src">@drawable/ic_chevron_right</item>
+        <item name="tint">?attr/colorOutline</item>
+    </style>
+
+    <!-- Search field above a list, with its text field -->
+    <style name="XLua.Search" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxBackgroundColor">?attr/colorSurfaceContainerLowest</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="hintEnabled">false</item>
+        <item name="startIconDrawable">@drawable/ic_search</item>
+    </style>
+
+    <style name="XLua.Search.Edit" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Progress indicator in the middle of a list which loads -->
+    <style name="XLua.Loading" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <!-- Why a list is empty, in the middle of it, shown by the screen -->
+    <style name="XLua.Empty" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">32dp</item>
+        <item name="android:textAppearance">@style/XLua.Text.Meta</item>
+    </style>
+
+    <!-- Text fields of forms -->
+    <style name="XLua.Field" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="XLua.Field.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="XLua.Field.Edit" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+    </style>
+
+    <!-- Warning above content, like changes which require a restart -->
+    <style name="XLua.Banner" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:background">@drawable/bg_rounded</item>
+        <item name="android:backgroundTint">?attr/colorWarningContainer</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <!-- Label of an axis, like the hours under the bars of the Activity tab -->
+    <style name="XLua.Text.Axis" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelSmall</item>
+        <item name="android:textColor">?attr/colorOutline</item>
+    </style>
+
+    <!-- Filter chips above lists -->
+    <style name="XLua.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">50dp</item>
+    </style>
+</resources>

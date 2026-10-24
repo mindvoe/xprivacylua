@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark palette, see values/colors.xml; the primary and tertiary containers are the same in both -->
+    <color name="c_primary">#92CCFF</color>
+    <color name="c_on_primary">#003351</color>
+    <color name="c_secondary">#ABCAE8</color>
+    <color name="c_on_secondary">#11334B</color>
+    <color name="c_secondary_container">#2A4A63</color>
+    <color name="c_on_secondary_container">#99B9D6</color>
+    <color name="c_tertiary">#FFBA45</color>
+    <color name="c_on_tertiary">#442C00</color>
+
+    <color name="c_surface">#0E0F15</color>
+    <color name="c_on_surface">#E4E4EF</color>
+    <color name="c_on_surface_variant">#C5C6D8</color>
+    <color name="c_surface_lowest">#15161E</color>
+    <color name="c_surface_low">#1A1B24</color>
+    <color name="c_surface_container">#1F2029</color>
+    <color name="c_surface_high">#292A34</color>
+    <color name="c_surface_highest">#34353F</color>
+    <color name="c_outline">#8F90A3</color>
+    <color name="c_outline_variant">#33343F</color>
+
+    <color name="c_error">#FFB4AB</color>
+    <color name="c_on_error">#690005</color>
+    <color name="c_error_container">#93000A</color>
+    <color name="c_on_error_container">#FFDAD6</color>
+
+    <color name="c_warning">#FFB86B</color>
+    <color name="c_warning_container">#4C2700</color>
+    <color name="c_on_warning_container">#FFDDB8</color>
+
+    <color name="c_success">#2E8A4B</color>
+    <color name="c_success_container">#1A2E22</color>
+    <color name="c_on_success_container">#6CCB86</color>
+
+    <color name="c_code_background">#0A0B10</color>
+
+</resources>

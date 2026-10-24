@@ -1,0 +1,139 @@
+import javax.inject.Inject
+
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+// The hook definition repository (repo/) is packaged as assets/repo, to browse and install definitions offline
+abstract class RepoAssetsTask extends DefaultTask {
+    @InputDirectory
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract DirectoryProperty getRepoDir()
+
+    @OutputDirectory
+    abstract DirectoryProperty getOutputDir()
+
+    @Inject
+    abstract FileSystemOperations getFs()
+
+    @TaskAction
+    void sync() {
+        fs.sync { spec ->
+            spec.from(repoDir)
+            spec.into(outputDir.dir('repo'))
+        }
+    }
+}
+
+def repoAssets = tasks.register('repoAssets', RepoAssetsTask) {
+    repoDir = rootProject.layout.projectDirectory.dir('repo')
+}
+
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.assets?.addGeneratedSourceDirectory(repoAssets, { it.outputDir })
+    }
+}
+
+// Release signing is optional: without keystore.properties the release build is left unsigned.
+// A relative storeFile is next to keystore.properties, in the project root.
+def keystorePropertiesFile = rootProject.file('keystore.properties')
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists())
+    keystorePropertiesFile.withInputStream { keystoreProperties.load(it) }
+
+android {
+    namespace = 'eu.faircode.xlua'
+    compileSdk = 37
+
+    defaultConfig {
+        applicationId = 'eu.faircode.xlua'
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 138
+        versionName = '1.37'
+    }
+
+    base {
+        archivesName = "XPrivacyLua-v${android.defaultConfig.versionName}-${android.defaultConfig.versionCode}"
+    }
+
+    signingConfigs {
+        // LSPosed reads the module with the legacy package parser, which fails on an APK with a v3 signature:
+        // the module would not load in system server
+        debug {
+            enableV3Signing = false
+            enableV4Signing = false
+        }
+        if (keystoreProperties['storeFile']) {
+            release {
+                storeFile = rootProject.file(keystoreProperties['storeFile'])
+                storePassword = keystoreProperties['storePassword']
+                keyAlias = keystoreProperties['keyAlias']
+                keyPassword = keystoreProperties['keyPassword']
+                // v1 and v2 only, like debug
+                enableV1Signing = true
+                enableV2Signing = true
+                enableV3Signing = false
+                enableV4Signing = false
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (keystoreProperties['storeFile'])
+                signingConfig = signingConfigs.release
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    testOptions {
+        // Engine code logs in debug builds; the methods of the Android stubs return defaults instead of failing
+        unitTests.returnDefaultValues = true
+        // Scripts create Java collections and arrays, of which LuaJ looks at all members, like it can on Android
+        unitTests.all {
+            jvmArgs '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED'
+        }
+    }
+
+    lint {
+        // The service and the hook engine use reflection on hidden framework APIs by design, see XCore and XParam
+        disable 'PrivateApi', 'DiscouragedPrivateApi', 'SoonBlockedPrivateApi', 'BlockedPrivateApi'
+        // Translations are maintained externally
+        disable 'MissingTranslation', 'ExtraTranslation'
+        // The folders he and id are what Android 5 and later expect, the old names iw and in are for before
+        disable 'LocaleFolder'
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.core
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.swiperefreshlayout
+    implementation libs.material
+    implementation libs.glide
+
+    // Provided at runtime by the Xposed framework
+    // Modern API: https://github.com/libxposed/api (LSPosed and compatible frameworks)
+    compileOnly libs.libxposed.api
+    // Legacy API: Xposed, EdXposed and older LSPosed versions
+    compileOnly libs.xposed.api
+
+    testImplementation libs.junit
+    testImplementation libs.libxposed.api
+    // Real implementation instead of the android.jar stubs
+    testImplementation libs.json
+}
